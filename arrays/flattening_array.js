@@ -22,22 +22,13 @@ function readLine() {
 /* Please do not modify anything above this line */
 
 function main() {
-  const inputString = readLine();
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  let isStartsWithVowel = false;
-  const lowerCaseString = inputString.toLowerCase();
-  for (let letter of vowels){
-      const results = lowerCaseString.startsWith(letter);
-      if(results){
-          isStartsWithVowel = true;
-      }
-  }
+  const myArray = JSON.parse(readLine().replace(/'/g,'"'));
   
-  if(isStartsWithVowel){
-      console.log(isStartsWithVowel);
-  }
-  else {
-      console.log(false);
-  }
-  /* Write your code here */
+  const flattenedArray = myArray.reduce((accumulator,currentValue)=>{
+      return [...accumulator,...currentValue];
+  });
+  
+  console.log(...flattenedArray);
+
+
 }

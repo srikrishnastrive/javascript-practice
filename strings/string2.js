@@ -23,21 +23,14 @@ function readLine() {
 
 function main() {
   const inputString = readLine();
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  let isStartsWithVowel = false;
-  const lowerCaseString = inputString.toLowerCase();
-  for (let letter of vowels){
-      const results = lowerCaseString.startsWith(letter);
-      if(results){
-          isStartsWithVowel = true;
-      }
-  }
+  const searchString = readLine();
+  const startIndex = parseInt(readLine());
+  const endIndex = parseInt(readLine());
   
-  if(isStartsWithVowel){
-      console.log(isStartsWithVowel);
-  }
-  else {
-      console.log(false);
-  }
+  const subString = inputString.substring(startIndex,endIndex);
+  const search = searchString.startsWith(subString);
+  console.log(search);
+
   /* Write your code here */
+
 }
